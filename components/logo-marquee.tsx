@@ -7,29 +7,27 @@ import Image from "next/image"
 export function LogoMarquee() {
   const [pausedRow, setPausedRow] = useState<string | null>(null)
 
-  const logos = [
-    { name: "VICTORINOX", image: "/icons/Victorinox.png" },
-    { name: "", image: "/icons/Trumpp.png" },
-    { name: "Skitbit", image: "/icons/Poedagarr.png" },
-    { name: "VK", image: "/icons/Supp.png" },
-    { name: "TechCrunch", image: "/icons/SHKUP.png" },
-    { name: "MailChimp", image: "/icons/Persona.png" },
-    { name: "ESJ", image: "/icons/HFFB.png" },
-    { name: "Kickstarter", image: "/icons/Palladio.png" },
+  const destinations = [
+    { name: "وجهات سياحية", image: "/tourism%202.jpg" },
+    { name: "إسطنبول", image: "/istanbul-turkey-university-students.jpg" },
+    { name: "السفر والفنادق", image: "/luxury-travel-airplane-first-class.jpg" },
+    { name: "الرياض", image: "/saudi-arabia-riyadh-business-district.jpg" },
+    { name: "عُمان", image: "/modern-office-building-oman-business.jpg" },
+    { name: "ماليزيا", image: "/university-campus-malaysia-modern.jpg" },
+    { name: "السياحة العلاجية", image: "/modern-hospital-medical-tourism.jpg" },
+    { name: "مدن عالمية", image: "/company%201.jpg" },
   ]
 
-  const secondRowLogos = [
-    { name: "StumbleUpon", image: "/icons/Kami.png" },
-    { name: "Microsoft", image: "/icons/NEEMANS.png" },
-    { name: "CleanMyMac", image: "/icons/FLICK.png" },
-    { name: "Google", image: "/icons/Vandelay.png" },
-    { name: "Behance", image: "/icons/KEJBYKEJ.png" },
-    { name: "Apple", image: "/icons/Skinny.png" },
-    { name: "TransferWise", image: "/icons/RICO.png" },
-    { name: "Medium", image: "/icons/Skyborne.png" },
+  const secondRowDestinations = [
+    { name: "وجهات سياحية", image: "/tourism%202.jpg" },
+    { name: "إسطنبول", image: "/istanbul-turkey-university-students.jpg" },
+    { name: "الرياض", image: "/saudi-arabia-riyadh-business-district.jpg" },
+    { name: "شراكات عالمية", image: "/doc%201.jpg" },
+    { name: "وجهة مميزة", image: "/images/archviz/client-love-1.jpg" },
+    { name: "وجهة مميزة", image: "/images/archviz/client-love-2.jpg" },
   ]
 
-  const LogoCard = ({ logo, rowId }: { logo: any; rowId: string }) => (
+  const DestinationCard = ({ destination, rowId }: { destination: { name: string; image: string }; rowId: string }) => (
     <div
       className="flex-shrink-0 mx-3"
       onMouseEnter={() => setPausedRow(rowId)}
@@ -38,8 +36,8 @@ export function LogoMarquee() {
       <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-2xl bg-black/40 border border-white/20 backdrop-blur-xl flex items-center justify-center overflow-hidden">
         <div className="relative w-full h-full">
           <Image
-            src={logo.image || "/placeholder.svg"}
-            alt={logo.name}
+            src={destination.image || "/placeholder.svg"}
+            alt={destination.name}
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 128px, (min-width: 640px) 112px, 96px"
@@ -55,9 +53,7 @@ export function LogoMarquee() {
         {/* Header */}
         <div className="flex flex-col items-center justify-between mb-12 sm:flex-row sm:items-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl text-center sm:text-right">
-            تعرف على <span className="text-brand-light">عملائنا</span>
-            <br />
-            المميزين
+            <span className="text-brand-light">وجهاتنا</span>
           </h2>
           <Button
             variant="outline"
@@ -78,8 +74,8 @@ export function LogoMarquee() {
                 width: "max-content",
               }}
             >
-              {[...logos, ...logos, ...logos].map((logo, index) => (
-                <LogoCard key={`first-${index}`} logo={logo} rowId="first" />
+              {[...destinations, ...destinations, ...destinations].map((destination, index) => (
+                <DestinationCard key={`first-${index}`} destination={destination} rowId="first" />
               ))}
             </div>
           </div>
@@ -93,8 +89,8 @@ export function LogoMarquee() {
                 width: "max-content",
               }}
             >
-              {[...secondRowLogos, ...secondRowLogos, ...secondRowLogos].map((logo, index) => (
-                <LogoCard key={`second-${index}`} logo={logo} rowId="second" />
+              {[...secondRowDestinations, ...secondRowDestinations, ...secondRowDestinations].map((destination, index) => (
+                <DestinationCard key={`second-${index}`} destination={destination} rowId="second" />
               ))}
             </div>
           </div>

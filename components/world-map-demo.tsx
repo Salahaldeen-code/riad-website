@@ -24,7 +24,7 @@ export function WorldMapDemo() {
         
         <div className="relative">
           <WorldMap
-            lineColor="#f99122"
+            lineColor="#0a6bc4"
             dots={[
           {
             start: {

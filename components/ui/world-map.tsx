@@ -151,7 +151,7 @@ export function WorldMap({
                   cy={startPoint.y}
                   r="3"
                   fill={lineColor}
-                  className="pointer-events-none drop-shadow-[0_0_8px_rgba(249,145,34,0.8)]"
+                  className="pointer-events-none drop-shadow-[0_0_8px_rgba(10,107,196,0.8)]"
                 />
                 {/* Hover area */}
                 {dot.start.location && (
@@ -208,7 +208,7 @@ export function WorldMap({
                   cy={endPoint.y}
                   r="3"
                   fill={lineColor}
-                  className="pointer-events-none drop-shadow-[0_0_8px_rgba(249,145,34,0.8)]"
+                  className="pointer-events-none drop-shadow-[0_0_8px_rgba(10,107,196,0.8)]"
                 />
                 {/* Hover area */}
                 {dot.end.location && (
@@ -269,7 +269,7 @@ export function WorldMap({
                 <div key={idx} className={idx > 0 ? "mt-5 pt-5 border-t border-white/10" : ""}>
                   <div className="space-y-2.5 text-right">
                     <div className="font-bold text-xl text-white flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-[#f99122] animate-pulse"></div>
+                      <div className="w-2 h-2 rounded-full bg-brand-light animate-pulse"></div>
                       {location.country}
                     </div>
                     <div className="text-lg font-semibold text-brand-light">

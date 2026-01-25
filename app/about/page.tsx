@@ -154,7 +154,7 @@ export default function AboutPage() {
               <div className="relative rounded-[24px] liquid-glass p-4 shadow-2xl">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-black">
                   <LazyVideo
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Timeline%202-YFaCK7cEiHWSMRv8XEHaLCoYj2SUAi.mp4"
+                    src="/videos/2.MP4"
                     className="absolute inset-0 h-full w-full object-cover"
                     autoplay={true}
                     loop={true}

@@ -49,8 +49,8 @@ export function Features() {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
                 <Image
-                  src="/images/intuitive-1.png"
-                  alt="خدمات تأسيس الشركات"
+                  src="/company%201.jpg"
+                  alt="ما يميزنا — حضورنا في أبرز المدن والأعمال"
                   fill
                   className="object-cover"
                   sizes="(min-width: 768px) 240px, 45vw"
@@ -59,8 +59,8 @@ export function Features() {
               </div>
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
                 <Image
-                  src="/images/intuitive-2.png"
-                  alt="خدمات التسويق الرقمي"
+                  src="/company%202.jpg"
+                  alt="ما يميزنا — فريقنا ونهجنا الاستراتيجي"
                   fill
                   className="object-cover"
                   sizes="(min-width: 768px) 240px, 45vw"
@@ -89,20 +89,24 @@ export function Features() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <Image
-                src={"/images/top-rated-1.png"}
-                width={280}
-                height={160}
-                alt="مشاريعنا الناجحة"
-                className="h-full w-full rounded-xl border border-white/10 object-cover"
-              />
-              <Image
-                src={"/images/top-rated-2.png"}
-                width={280}
-                height={160}
-                alt="عملاؤنا السعداء"
-                className="h-full w-full rounded-xl border border-white/10 object-cover"
-              />
+              <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10">
+                <Image
+                  src="/download%20(2).jpg"
+                  alt="وجهة الحج والعمرة — مكة المكرمة"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 280px, 45vw"
+                />
+              </div>
+              <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10">
+                <Image
+                  src="/doc%201.jpg"
+                  alt="شراكاتنا ونهجنا القائم على الثقة والاحترافية"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 280px, 45vw"
+                />
+              </div>
             </div>
           </CardContent>
         </Card>

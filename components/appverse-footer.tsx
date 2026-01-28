@@ -112,23 +112,23 @@ export function AppverseFooter() {
             {/* Brand */}
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
-                <Image src="/icons/skitbit-white.svg" alt="الشعار" width={24} height={24} className="h-6 w-6" />
-                <span className="text-xl font-semibold text-white">خدمات الأعمال</span>
+                <Image src="/images/logo%20(3).png" alt="مقدام لخدمات الأعمال" width={32} height={32} className="h-8 w-8" />
+                <span className="text-xl font-semibold text-white">مقدام لخدمات الأعمال</span>
               </div>
               <p className="max-w-sm text-sm text-neutral-400">{content.tagline}</p>
             </div>
 
             {/* Navigation */}
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-2">
-              <div>
+              <div className="text-right">
                 <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">التنقل</h5>
                 <ul className="space-y-2 text-sm text-neutral-300">
                   {[
-                    { label: "الرئيسية", href: "#" },
-                    { label: "خدماتنا", href: "#services" },
-                    { label: "من نحن", href: "#about" },
-                    { label: "التسويق", href: "#marketing" },
-                    { label: "تواصل معنا", href: "#contact" },
+                    { label: "الرئيسية", href: "/" },
+                    { label: "خدماتنا", href: "/services" },
+                    { label: "من نحن", href: "/about" },
+                    { label: "التسويق", href: "/services" },
+                    { label: "تواصل معنا", href: "/contact" },
                   ].map((item) => (
                     <li key={item.label}>
                       <Link href={item.href} className="hover:text-brand-light">
@@ -138,10 +138,10 @@ export function AppverseFooter() {
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className="text-right">
                 <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">تواصل معنا</h5>
                 <ul className="space-y-2 text-sm text-neutral-300">
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 justify-end">
                     <Twitter className="h-4 w-4 text-neutral-400" />
                     <a
                       href="https://twitter.com/"
@@ -153,7 +153,7 @@ export function AppverseFooter() {
                       تويتر
                     </a>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 justify-end">
                     <Youtube className="h-4 w-4 text-neutral-400" />
                     <a
                       href="https://www.youtube.com/"
@@ -165,7 +165,7 @@ export function AppverseFooter() {
                       يوتيوب
                     </a>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 justify-end">
                     <Instagram className="h-4 w-4 text-neutral-400" />
                     <a
                       href="https://instagram.com/"
@@ -177,7 +177,7 @@ export function AppverseFooter() {
                       انستغرام
                     </a>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 justify-end">
                     <MessageCircle className="h-4 w-4 text-neutral-400" />
                     <a
                       href="https://wa.link/rc25na"

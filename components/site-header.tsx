@@ -20,8 +20,8 @@ export function SiteHeader() {
         <div className="flex h-14 items-center justify-between px-6 liquid-glass-header rounded-full">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-1.5">
-            <Image src="/icons/skitbit-white.svg" alt="الشعار" width={20} height={20} className="h-5 w-5" />
-            <span className="font-semibold tracking-wide text-white">خدمات الأعمال</span>
+            <Image src="/images/logo%20(3).png" alt="مقدام لخدمات الأعمال" width={28} height={28} className="h-7 w-7" />
+            <span className="font-semibold tracking-wide text-white">مقدام لخدمات الأعمال</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -61,8 +61,8 @@ export function SiteHeader() {
               <SheetContent side="left" className="liquid-glass border-gray-800 p-0 w-64 flex flex-col">
                 {/* Brand Header */}
                 <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
-                  <Image src="/icons/skitbit-white.svg" alt="الشعار" width={24} height={24} className="h-6 w-6" />
-                  <span className="font-semibold tracking-wide text-white text-lg">خدمات الأعمال</span>
+                  <Image src="/images/logo%20(3).png" alt="مقدام لخدمات الأعمال" width={28} height={28} className="h-7 w-7" />
+                  <span className="font-semibold tracking-wide text-white text-lg">مقدام لخدمات الأعمال</span>
                 </div>
 
                 {/* Nav Links */}

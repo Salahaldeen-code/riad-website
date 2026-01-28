@@ -71,8 +71,8 @@ export function FooterArchviz() {
           <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
-                <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={24} height={24} className="h-6 w-6" />
-                <span className="text-xl font-semibold text-white">Skitbit ArchViz</span>
+                <Image src="/images/logo%20(3).png" alt="Moqdam Business Services" width={28} height={28} className="h-7 w-7" />
+                <span className="text-xl font-semibold text-white">Moqdam ArchViz Studio</span>
               </div>
               <p className="max-w-sm text-sm text-neutral-400">
                 Photorealistic architecture visualization for launches, leasing and approvals.

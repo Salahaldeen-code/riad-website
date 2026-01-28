@@ -16,8 +16,8 @@ export function HeroArchviz() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center py-14 sm:py-20">
           <div className="mb-5 flex items-center gap-2">
-            <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={32} height={32} className="h-8 w-8" />
-            <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">archviz</p>
+            <Image src="/images/logo%20(3).png" alt="Moqdam Business Services" width={40} height={40} className="h-10 w-10" />
+            <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">Moqdam ArchViz</p>
           </div>
 
           {/* H1 */}

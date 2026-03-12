@@ -71,7 +71,7 @@ export function FooterArchviz() {
           <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
-                <Image src="/images/logo%20(3).png" alt="Moqdam Business Services" width={28} height={28} className="h-7 w-7" />
+                <Image src="/images/logo%20(3).png" alt="Moqdam Business Services" width={40} height={40} className="h-10 w-10" />
                 <span className="text-xl font-semibold text-white">Moqdam ArchViz Studio</span>
               </div>
               <p className="max-w-sm text-sm text-neutral-400">

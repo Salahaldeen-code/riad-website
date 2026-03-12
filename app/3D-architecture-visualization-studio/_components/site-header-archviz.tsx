@@ -51,7 +51,7 @@ export function SiteHeaderArchviz() {
       <div className="container mx-auto max-w-4xl">
         <div className="flex h-14 items-center justify-between px-6 liquid-glass-header rounded-full">
           <Link href="/3D-architecture-visualization-studio" className="flex items-center gap-1.5">
-            <Image src="/images/logo%20(3).png" alt="Moqdam Business Services" width={24} height={24} className="h-6 w-6" />
+            <Image src="/images/logo%20(3).png" alt="Moqdam Business Services" width={32} height={32} className="h-8 w-8" />
             <span className="font-semibold tracking-wide text-white">Moqdam ArchViz Studio</span>
           </Link>
 
@@ -127,7 +127,7 @@ export function SiteHeaderArchviz() {
               </SheetTrigger>
               <SheetContent side="right" className="liquid-glass border-gray-800 p-0 w-64 flex flex-col">
                 <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
-                  <Image src="/images/logo%20(3).png" alt="Moqdam Business Services" width={28} height={28} className="h-7 w-7" />
+                  <Image src="/images/logo%20(3).png" alt="Moqdam Business Services" width={36} height={36} className="h-9 w-9" />
                   <span className="font-semibold tracking-wide text-white text-lg">Moqdam ArchViz Studio</span>
                 </div>
                 <nav className="flex flex-col gap-1 mt-2 text-gray-200">

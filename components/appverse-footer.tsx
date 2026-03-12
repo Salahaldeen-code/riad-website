@@ -112,7 +112,7 @@ export function AppverseFooter() {
             {/* Brand */}
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
-                <Image src="/images/logo%20(3).png" alt="مقدام لخدمات الأعمال" width={32} height={32} className="h-8 w-8" />
+                <Image src="/images/logo%20(3).png" alt="مقدام لخدمات الأعمال" width={44} height={44} className="h-11 w-11" />
                 <span className="text-xl font-semibold text-white">مقدام لخدمات الأعمال</span>
               </div>
               <p className="max-w-sm text-sm text-neutral-400">{content.tagline}</p>

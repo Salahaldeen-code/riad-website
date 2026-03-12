@@ -5,6 +5,7 @@ import { Inter, Tajawal } from "next/font/google"
 import Script from "next/script"
 import Plasma from "@/components/plasma"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { RemoveInitialLoading } from "@/components/remove-initial-loading"
 import { Suspense } from "react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
@@ -88,6 +89,38 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="font-[Tajawal]">
+        {/* Initial loading overlay: shows on refresh until React hydrates */}
+        <div
+          id="initial-loading"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            minHeight: "100dvh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "#000",
+          }}
+          aria-hidden="true"
+        >
+          <style dangerouslySetInnerHTML={{ __html: "@keyframes initial-spin{to{transform:rotate(360deg)}}#initial-loading .initial-spinner{animation:initial-spin 0.8s linear infinite}" }} />
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2rem" }}>
+            <div style={{ position: "relative" }}>
+              <img src="/images/logo%20(3).png" alt="" width={80} height={80} style={{ width: 80, height: 80, opacity: 0.9 }} />
+              <div className="initial-spinner" style={{ position: "absolute", inset: -8, border: "2px solid rgba(10,107,196,0.3)", borderTopColor: "#0a6bc4", borderRadius: "50%" }} aria-hidden="true" />
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}>
+              <div style={{ height: 8, width: 96, borderRadius: 9999, background: "rgba(255,255,255,0.1)", overflow: "hidden" }}>
+                <div style={{ height: "100%", width: "66%", borderRadius: 9999, background: "#0a6bc4", opacity: 0.8 }} />
+              </div>
+              <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>جاري التحميل...</p>
+            </div>
+          </div>
+        </div>
+
+        <RemoveInitialLoading />
+
         <Suspense fallback={null}>
           <div className="fixed inset-0 z-0 bg-black">
             <Plasma color="#0a6bc4" speed={0.8} direction="forward" scale={1.5} opacity={0.4} mouseInteractive={true} />

@@ -3,7 +3,7 @@ import { HeroArchviz } from "./_components/hero-archviz"
 import { FeaturesArchviz } from "./_components/features-archviz"
 import { LogoMarqueeArchviz } from "./_components/logo-marquee-archviz"
 import { PricingArchviz } from "./_components/pricing-archviz"
-import { FooterArchviz } from "./_components/footer-archviz"
+import { AppverseFooter } from "@/components/appverse-footer"
 import Script from "next/script"
 
 export const dynamic = "force-static"
@@ -43,7 +43,7 @@ export default function Page() {
         <FeaturesArchviz />
         <LogoMarqueeArchviz />
         <PricingArchviz />
-        <FooterArchviz />
+        <AppverseFooter />
       </main>
 
       <Script

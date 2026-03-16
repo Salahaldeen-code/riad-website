@@ -33,7 +33,7 @@ export function LogoMarquee() {
       onMouseEnter={() => setPausedRow(rowId)}
       onMouseLeave={() => setPausedRow(null)}
     >
-      <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-2xl bg-black/40 border border-white/20 backdrop-blur-xl flex items-center justify-center overflow-hidden">
+      <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-2xl bg-white/80 border border-gray-200/80 backdrop-blur-xl flex items-center justify-center overflow-hidden shadow-md">
         <div className="relative w-full h-full">
           <Image
             src={destination.image || "/placeholder.svg"}
@@ -48,16 +48,16 @@ export function LogoMarquee() {
   )
 
   return (
-    <section className="text-white py-16 sm:py-20 overflow-hidden">
+    <section className="text-gray-900 py-16 sm:py-20 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col items-center justify-between mb-12 sm:flex-row sm:items-center">
-          <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl text-center sm:text-right">
+          <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl text-center sm:text-right">
             <span className="text-brand-light">وجهاتنا</span>
           </h2>
           <Button
             variant="outline"
-            className="mt-4 sm:mt-0 liquid-glass hover:liquid-glass-enhanced text-white border-white/20 bg-transparent"
+            className="mt-4 sm:mt-0 liquid-glass hover:liquid-glass-enhanced text-gray-900 border-gray-200 bg-transparent"
           >
             المزيد
           </Button>

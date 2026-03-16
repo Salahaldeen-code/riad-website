@@ -5,7 +5,7 @@ import LazyVideo from "./lazy-video"
 export function Hero() {
   const buttonNew = (
     <Button asChild className="rounded-full bg-brand px-6 text-white hover:bg-brand-light">
-      <a href="https://wa.link/rc25na" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/96877292028" target="_blank" rel="noopener noreferrer">
         تواصل معنا
       </a>
     </Button>
@@ -19,9 +19,9 @@ export function Hero() {
             <Image src="/images/logo%20(3).png" alt="مقدام لخدمات الأعمال" width={56} height={56} className="h-14 w-14" />
             <p className="text-sm uppercase tracking-[0.25em] text-brand-light/80">Moqdam Business Services</p>
           </div>
-          <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
             <span className="block">خدمات شاملة</span>
-            <span className="block text-brand-light drop-shadow-[0_0_20px_rgba(5,79,152,0.35)]">للمستثمرين</span>
+            <span className="block text-brand-light drop-shadow-[0_0_20px_rgba(5,79,152,0.25)]">للمستثمرين</span>
             <span className="block">ورجال الأعمال</span>
           </h1>
           <div className="mt-6">{buttonNew}</div>
@@ -58,8 +58,8 @@ function PhoneCard({
   videoSrc?: string
 }) {
   return (
-    <div className="relative rounded-[28px] glass-border bg-neutral-900 p-2">
-      <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
+    <div className="relative rounded-[28px] glass-border bg-gray-100 p-2">
+      <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-white">
         <LazyVideo
           src={videoSrc ?? "/videos/2.MP4"}
           className="absolute inset-0 h-full w-full object-cover"
@@ -71,11 +71,11 @@ function PhoneCard({
         />
 
         <div className="relative z-10 p-3">
-          <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
+          <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-gray-300" />
           <div className="space-y-1 px-1">
-            <div className="text-3xl font-bold leading-snug text-white/90">{title}</div>
-            <p className="text-xs text-white/70">{sub}</p>
-            <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-brand-light">
+            <div className="text-3xl font-bold leading-snug text-gray-900">{title}</div>
+            <p className="text-xs text-gray-600">{sub}</p>
+            <div className="mt-3 inline-flex items-center rounded-full bg-brand-light/20 px-2 py-0.5 text-[10px] uppercase tracking-wider text-brand-light">
               {tone === "calm" ? "خدماتنا" : tone}
             </div>
           </div>

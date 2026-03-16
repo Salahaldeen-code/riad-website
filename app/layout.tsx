@@ -21,7 +21,7 @@ const tajawal = Tajawal({
 export const metadata: Metadata = {
   title: "خدمات الأعمال والاستثمار | تأسيس الشركات والتسويق",
   description:
-    "نقدم خدمات شاملة للمستثمرين ورجال الأعمال: تأسيس الشركات، الخدمات المحاسبية، القبولات الجامعية، السياحة والتنسيق الطبي، والتسويق الرقمي.",
+    "نوفر حلولاً متكاملة لدعم المستثمرين ورواد الأعمال: تأسيس الشركات والإجراءات القانونية، التسويق وتطوير الأعمال، السياحة والتعليم والاستشارات.",
   generator: "v0.app",
 }
 
@@ -100,7 +100,7 @@ export default function RootLayout({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            background: "#000",
+            background: "#fff",
           }}
           aria-hidden="true"
         >
@@ -111,10 +111,10 @@ export default function RootLayout({
               <div className="initial-spinner" style={{ position: "absolute", inset: -8, border: "2px solid rgba(10,107,196,0.3)", borderTopColor: "#0a6bc4", borderRadius: "50%" }} aria-hidden="true" />
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}>
-              <div style={{ height: 8, width: 96, borderRadius: 9999, background: "rgba(255,255,255,0.1)", overflow: "hidden" }}>
+              <div style={{ height: 8, width: 96, borderRadius: 9999, background: "rgba(0,0,0,0.1)", overflow: "hidden" }}>
                 <div style={{ height: "100%", width: "66%", borderRadius: 9999, background: "#0a6bc4", opacity: 0.8 }} />
               </div>
-              <p style={{ fontSize: "0.875rem", color: "#9ca3af" }}>جاري التحميل...</p>
+              <p style={{ fontSize: "0.875rem", color: "#4b5563" }}>جاري التحميل...</p>
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function RootLayout({
         <RemoveInitialLoading />
 
         <Suspense fallback={null}>
-          <div className="fixed inset-0 z-0 bg-black">
+          <div className="fixed inset-0 z-0 bg-white">
             <Plasma color="#0a6bc4" speed={0.8} direction="forward" scale={1.5} opacity={0.4} mouseInteractive={true} />
           </div>
           <div className="relative z-10">{children}</div>

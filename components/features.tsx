@@ -34,20 +34,20 @@ export function Features() {
 
   return (
     <section id="features" className="container mx-auto px-4 py-16 sm:py-20">
-      <h2 className="mb-8 text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+      <h2 className="mb-8 text-center text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
         {content.title}
       </h2>
 
       <div className="grid gap-6 md:grid-cols-2">
         {/* Adaptability Card - Hidden on mobile */}
-        <Card className="hidden md:block liquid-glass border border-white/20">
+        <Card className="hidden md:block liquid-glass border border-gray-200/80">
           <CardHeader>
-            <p className="text-[11px] tracking-widest text-white/80">خدماتنا</p>
-            <CardTitle className="mt-1 text-xl text-white">نوفر لك تجربة سلسة ومتكاملة</CardTitle>
+            <p className="text-[11px] tracking-widest text-gray-500">خدماتنا</p>
+            <CardTitle className="mt-1 text-xl text-gray-900">نوفر لك تجربة سلسة ومتكاملة</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-4">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-gray-200/80">
                 <Image
                   src="/company%201.jpg"
                   alt="ما يميزنا — حضورنا في أبرز المدن والأعمال"
@@ -57,7 +57,7 @@ export function Features() {
                   priority={false}
                 />
               </div>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-gray-200/80">
                 <Image
                   src="/company%202.jpg"
                   alt="ما يميزنا — فريقنا ونهجنا الاستراتيجي"
@@ -72,10 +72,10 @@ export function Features() {
         </Card>
 
         {/* Client Love Card - Always visible */}
-        <Card className="liquid-glass border border-white/20">
+        <Card className="liquid-glass border border-gray-200/80">
           <CardHeader>
-            <p className="text-[11px] tracking-widest text-white/80">آراء العملاء</p>
-            <CardTitle className="mt-1 text-xl text-white">
+            <p className="text-[11px] tracking-widest text-gray-500">آراء العملاء</p>
+            <CardTitle className="mt-1 text-xl text-gray-900">
               خدماتهم لم تكن مجرد عمل احترافي، بل أحدثت فارقاً حقيقياً — عملاؤنا شعروا بالتميز فوراً.
             </CardTitle>
           </CardHeader>
@@ -89,7 +89,7 @@ export function Features() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10">
+              <div className="relative aspect-video overflow-hidden rounded-xl border border-gray-200/80">
                 <Image
                   src="/download%20(2).jpg"
                   alt="وجهة الحج والعمرة — مكة المكرمة"
@@ -98,7 +98,7 @@ export function Features() {
                   sizes="(min-width: 768px) 280px, 45vw"
                 />
               </div>
-              <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10">
+              <div className="relative aspect-video overflow-hidden rounded-xl border border-gray-200/80">
                 <Image
                   src="/doc%201.jpg"
                   alt="شراكاتنا ونهجنا القائم على الثقة والاحترافية"

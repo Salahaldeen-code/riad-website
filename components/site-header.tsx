@@ -21,11 +21,11 @@ export function SiteHeader() {
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-1.5">
             <Image src="/images/logo%20(3).png" alt="مقدام لخدمات الأعمال" width={48} height={48} className="h-12 w-12" />
-            <span className="font-semibold tracking-wide text-white">مقدام لخدمات الأعمال</span>
+            <span className="font-semibold tracking-wide text-gray-900">مقدام لخدمات الأعمال</span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-6 text-sm text-white/90 md:flex">
+          <nav className="hidden items-center gap-6 text-sm text-gray-700 md:flex">
             {links.map((l) => (
               <Link key={l.href} href={l.href} className="hover:text-brand-light transition-colors">
                 {l.label}
@@ -52,28 +52,28 @@ export function SiteHeader() {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="border-gray-700 bg-gray-900/80 text-gray-200 hover:bg-gray-800"
+                  className="border-gray-300 bg-white/80 text-gray-700 hover:bg-gray-100"
                 >
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">فتح القائمة</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="liquid-glass border-gray-800 p-0 w-64 flex flex-col">
+              <SheetContent side="left" className="liquid-glass border-gray-200 p-0 w-64 flex flex-col">
                 {/* Brand Header */}
-                <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
+                <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-200">
                   <Image src="/images/logo%20(3).png" alt="مقدام لخدمات الأعمال" width={48} height={48} className="h-12 w-12" />
-                  <span className="font-semibold tracking-wide text-white text-lg">مقدام لخدمات الأعمال</span>
+                  <span className="font-semibold tracking-wide text-gray-900 text-lg">مقدام لخدمات الأعمال</span>
                 </div>
 
                 {/* Nav Links */}
-                <nav className="flex flex-col gap-1 mt-2 text-gray-200">
+                <nav className="flex flex-col gap-1 mt-2 text-gray-700">
                   {links.map((l) => (
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-brand-light transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 hover:text-brand-light transition-colors"
                     >
-                      <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
+                      <span className="inline-flex items-center justify-center w-5 h-5 text-gray-500">
                         <l.icon className="h-4 w-4" />
                       </span>
                       <span className="text-sm">{l.label}</span>
@@ -82,14 +82,14 @@ export function SiteHeader() {
                 </nav>
 
                 {/* CTA Button at Bottom */}
-                <div className="mt-auto border-t border-gray-800 p-4">
+                <div className="mt-auto border-t border-gray-200 p-4">
                   <Button
                     asChild
                     className="w-full bg-brand text-white font-medium rounded-lg px-6 py-2.5
                                hover:bg-brand-light hover:shadow-md hover:scale-[1.02]
                                transition-all"
                   >
-                    <Link href="https://wa.link/65mf3i">احصل على عرض سعر</Link>
+                    <Link href="https://wa.me/96877292028">احصل على عرض سعر</Link>
                   </Button>
                 </div>
               </SheetContent>

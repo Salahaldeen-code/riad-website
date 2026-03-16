@@ -20,33 +20,49 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
+  const [submitError, setSubmitError] = useState<string | null>(null)
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setSubmitted(true)
-    setIsSubmitting(false)
+    setSubmitError(null)
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setSubmitError(data.error || "حدث خطأ أثناء الإرسال")
+        return
+      }
+      setSubmitted(true)
+    } catch {
+      setSubmitError("حدث خطأ أثناء الإرسال. حاول لاحقاً.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
     {
       icon: Phone,
       label: "الهاتف",
-      value: "+968 9999 9999",
-      href: "tel:+96899999999",
+      value: "+968 7729 2028",
+      href: "tel:+96877292028",
     },
     {
       icon: Mail,
       label: "البريد الإلكتروني",
-      value: "info@example.com",
-      href: "mailto:info@example.com",
+      value: "info@moqdambusiness.com",
+      href: "mailto:info@moqdambusiness.com",
     },
     {
       icon: MessageCircle,
       label: "واتساب",
       value: "تواصل معنا عبر واتساب",
-      href: "https://wa.link/65mf3i",
+      href: "https://wa.me/96877292028",
     },
     {
       icon: MapPin,
@@ -57,7 +73,7 @@ export default function ContactPage() {
   ]
 
   return (
-    <main className="min-h-[100dvh] text-white">
+    <main className="min-h-[100dvh] text-gray-900">
       <SiteHeader />
 
       {/* Hero Section */}
@@ -68,7 +84,7 @@ export default function ContactPage() {
             <span className="block">نحن هنا</span>
             <span className="block text-brand-light drop-shadow-[0_0_20px_rgba(5,79,152,0.35)]">لمساعدتك</span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             تواصل معنا للحصول على استشارة مجانية أو لمعرفة المزيد عن خدماتنا
           </p>
         </div>
@@ -80,7 +96,7 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 gap-6 items-stretch">
             {/* Contact Form */}
             <div className="glass-border rounded-3xl p-8 flex flex-col h-full">
-              <h2 className="text-2xl font-bold text-white mb-6 text-right">أرسل لنا رسالة</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-right">أرسل لنا رسالة</h2>
 
               <div className="flex-1 flex flex-col">
               {submitted ? (
@@ -88,8 +104,8 @@ export default function ContactPage() {
                   <div className="w-16 h-16 rounded-full bg-brand/20 flex items-center justify-center mx-auto mb-4">
                     <Send className="h-8 w-8 text-brand-light" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">تم إرسال رسالتك بنجاح!</h3>
-                  <p className="text-gray-400">سنتواصل معك في أقرب وقت ممكن</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">تم إرسال رسالتك بنجاح!</h3>
+                  <p className="text-gray-600">سنتواصل معك في أقرب وقت ممكن</p>
                   <Button
                     onClick={() => {
                       setSubmitted(false)
@@ -103,7 +119,7 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="flex-1 flex flex-col space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-gray-300 text-right block">
+                    <Label htmlFor="name" className="text-gray-600 text-right block">
                       الاسم
                     </Label>
                     <Input
@@ -113,12 +129,12 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
-                      className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-500 text-right focus:border-brand focus:ring-brand"
+                      className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 text-right focus:border-brand focus:ring-brand shadow-sm"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-gray-300 text-right block">
+                    <Label htmlFor="email" className="text-gray-600 text-right block">
                       البريد الإلكتروني
                     </Label>
                     <Input
@@ -128,12 +144,12 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
-                      className="bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-500 text-right focus:border-brand focus:ring-brand"
+                      className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 text-right focus:border-brand focus:ring-brand shadow-sm"
                     />
                   </div>
 
                   <div className="space-y-2 flex-1 flex flex-col">
-                    <Label htmlFor="message" className="text-gray-300 text-right block">
+                    <Label htmlFor="message" className="text-gray-600 text-right block">
                       الرسالة
                     </Label>
                     <Textarea
@@ -143,10 +159,13 @@ export default function ContactPage() {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
                       rows={5}
-                      className="flex-1 bg-gray-900/50 border-gray-700 text-white placeholder:text-gray-500 text-right resize-none focus:border-brand focus:ring-brand"
+                      className="flex-1 !bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 text-right resize-none focus:border-brand focus:ring-brand shadow-sm"
                     />
                   </div>
 
+                  {submitError && (
+                    <p className="text-sm text-red-600 text-right">{submitError}</p>
+                  )}
                   <Button
                     type="submit"
                     disabled={isSubmitting}
@@ -164,7 +183,7 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div className="flex flex-col gap-6 h-full">
               <div className="glass-border rounded-3xl p-8 flex-1 flex flex-col">
-                <h2 className="text-2xl font-bold text-white mb-6 text-right">معلومات التواصل</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 text-right">معلومات التواصل</h2>
                 <div className="space-y-4 flex-1">
                   {contactInfo.map((info, index) => (
                     <a
@@ -178,8 +197,8 @@ export default function ContactPage() {
                         <info.icon className="h-5 w-5 text-brand-light" />
                       </div>
                       <div className="text-right flex-1">
-                        <p className="text-gray-400 text-sm">{info.label}</p>
-                        <p className="text-white font-medium">{info.value}</p>
+                        <p className="text-gray-500 text-sm">{info.label}</p>
+                        <p className="text-gray-900 font-medium">{info.value}</p>
                       </div>
                     </a>
                   ))}
@@ -191,15 +210,15 @@ export default function ContactPage() {
                 <div className="w-16 h-16 rounded-2xl bg-green-500/20 flex items-center justify-center mx-auto mb-4">
                   <MessageCircle className="h-8 w-8 text-green-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">تواصل سريع عبر واتساب</h3>
-                <p className="text-gray-400 mb-6">للرد الفوري على استفساراتك</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">تواصل سريع عبر واتساب</h3>
+                <p className="text-gray-600 mb-6">للرد الفوري على استفساراتك</p>
                 <Button
                   asChild
                   className="bg-green-600 text-white font-medium rounded-lg px-8 py-3
                              hover:bg-green-500 hover:shadow-md hover:scale-[1.02]
                              transition-all"
                 >
-                  <a href="https://wa.link/65mf3i" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/96877292028" target="_blank" rel="noopener noreferrer">
                     تواصل عبر واتساب
                   </a>
                 </Button>

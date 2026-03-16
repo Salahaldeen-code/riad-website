@@ -5,10 +5,10 @@ import { motion } from "motion/react"
 export function WhatsAppButton() {
   return (
     <motion.a
-      href="https://wa.link/rc25na"
+      href="https://wa.me/96877292028"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl hover:bg-[#20BA5A] transition-all duration-300 group"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-brand-light text-white shadow-2xl hover:bg-brand transition-all duration-300 group"
       aria-label="تواصل معنا عبر الواتساب"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
@@ -28,7 +28,7 @@ export function WhatsAppButton() {
       
       {/* Pulse animation */}
       <motion.div
-        className="absolute inset-0 rounded-full bg-[#25D366] opacity-75"
+        className="absolute inset-0 rounded-full bg-brand-light opacity-75"
         animate={{
           scale: [1, 1.5, 1.5],
           opacity: [0.75, 0, 0],

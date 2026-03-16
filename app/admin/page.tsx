@@ -210,7 +210,7 @@ const defaultContent: ContentData = {
     },
   },
   orderForm: {
-    whatsappNumber: "+918384092211",
+    whatsappNumber: "+96877292028",
     modelingOptions: {
       simple: { price_usd: 35, price_inr: 3000, description: "Basic shapes, minimal details" },
       medium: { price_usd: 60, price_inr: 5000, description: "Moderate details, textures" },

@@ -29,8 +29,8 @@ export function WorldMap({
   } | null>(null);
   const map = useMemo(() => new DottedMap({ height: 100, grid: "diagonal" }), []);
 
-  // Default to dark theme since the site is dark-themed
-  const isDark = true;
+  // White map background to match the site's light theme
+  const isDark = false;
 
   const svgMap = map.getSVG({
     radius: 0.22,
@@ -266,16 +266,16 @@ export function WorldMap({
           >
             <div className="glass-border-enhanced rounded-2xl p-5 min-w-[240px] max-w-[300px] shadow-2xl">
               {hoveredPoint.locations.map((location, idx) => (
-                <div key={idx} className={idx > 0 ? "mt-5 pt-5 border-t border-white/10" : ""}>
+                <div key={idx} className={idx > 0 ? "mt-5 pt-5 border-t border-gray-200" : ""}>
                   <div className="space-y-2.5 text-right">
-                    <div className="font-bold text-xl text-white flex items-center gap-2">
+                    <div className="font-bold text-xl text-gray-900 flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-brand-light animate-pulse"></div>
                       {location.country}
                     </div>
                     <div className="text-lg font-semibold text-brand-light">
                       {location.city}
                     </div>
-                    <div className="text-sm text-gray-400 leading-relaxed">
+                    <div className="text-sm text-gray-600 leading-relaxed">
                       {location.address}
                     </div>
                   </div>

@@ -94,8 +94,8 @@ export default function TermsPage() {
                   <p className="text-neutral-300">If you have any questions about these Terms, please contact us at:</p>
                   <p className="text-neutral-300">
                     Email:{" "}
-                    <a href="mailto:hello@theskitbit.com" className="text-lime-300 underline">
-                      hello@theskitbit.com
+                    <a href="mailto:info@moqdambusiness.com" className="text-lime-300 underline">
+                      info@moqdambusiness.com
                     </a>
                   </p>
                 </section>

@@ -36,7 +36,7 @@ export default function AboutPage() {
   ]
 
   return (
-    <main className="min-h-[100dvh] text-white">
+    <main className="min-h-[100dvh] text-gray-900">
       <SiteHeader />
 
       {/* Hero Section */}
@@ -47,7 +47,7 @@ export default function AboutPage() {
             <span className="block">شريكك الموثوق</span>
             <span className="block text-brand-light drop-shadow-[0_0_20px_rgba(5,79,152,0.35)]">في رحلة النجاح</span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             نحن فريق من الخبراء المتخصصين نعمل على تقديم حلول متكاملة للمستثمرين ورجال الأعمال
           </p>
         </div>
@@ -57,8 +57,8 @@ export default function AboutPage() {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="glass-border rounded-3xl p-8 md:p-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-right">نبذة عن الشركة</h2>
-            <div className="space-y-4 text-gray-300 text-right leading-relaxed">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-right">نبذة عن الشركة</h2>
+            <div className="space-y-4 text-gray-600 text-right leading-relaxed">
               <p>
                 تأسست شركتنا برؤية واضحة لتقديم خدمات متكاملة ومتميزة للمستثمرين ورجال الأعمال في منطقة الخليج العربي
                 والشرق الأوسط. نجمع بين الخبرة المحلية والمعايير العالمية لنقدم لعملائنا أفضل الحلول.
@@ -87,9 +87,9 @@ export default function AboutPage() {
                 <div className="w-14 h-14 rounded-2xl bg-brand/20 flex items-center justify-center">
                   <Eye className="h-7 w-7 text-brand-light" />
                 </div>
-                <h2 className="text-2xl font-bold text-white">رؤيتنا</h2>
+                <h2 className="text-2xl font-bold text-gray-900">رؤيتنا</h2>
               </div>
-              <p className="text-gray-300 text-right leading-relaxed">
+              <p className="text-gray-600 text-right leading-relaxed">
                 أن نكون الشريك الأول والخيار الأمثل للمستثمرين ورجال الأعمال في المنطقة، ونساهم في تحقيق نمو مستدام
                 لأعمالهم من خلال تقديم خدمات متكاملة بمعايير عالمية.
               </p>
@@ -101,9 +101,9 @@ export default function AboutPage() {
                 <div className="w-14 h-14 rounded-2xl bg-brand/20 flex items-center justify-center">
                   <Target className="h-7 w-7 text-brand-light" />
                 </div>
-                <h2 className="text-2xl font-bold text-white">رسالتنا</h2>
+                <h2 className="text-2xl font-bold text-gray-900">رسالتنا</h2>
               </div>
-              <p className="text-gray-300 text-right leading-relaxed">
+              <p className="text-gray-600 text-right leading-relaxed">
                 تمكين المستثمرين ورجال الأعمال من تحقيق أهدافهم من خلال تقديم حلول مبتكرة وخدمات استثنائية، مع الالتزام
                 بأعلى معايير الجودة والنزاهة في كل ما نقوم به.
               </p>
@@ -115,7 +115,7 @@ export default function AboutPage() {
       {/* Values */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-10 text-center">قيمنا</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-10 text-center">قيمنا</h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {values.map((value, index) => (
               <div key={index} className="glass-border rounded-2xl p-6 hover:border-brand/30 transition-colors">
@@ -124,8 +124,8 @@ export default function AboutPage() {
                     <value.icon className="h-6 w-6 text-brand-light" />
                   </div>
                   <div className="text-right">
-                    <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
-                    <p className="text-gray-400 text-sm">{value.description}</p>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h3>
+                    <p className="text-gray-600 text-sm">{value.description}</p>
                   </div>
                 </div>
               </div>
@@ -141,10 +141,10 @@ export default function AboutPage() {
             {/* Left copy */}
             <div>
               <p className="mb-2 text-[11px] tracking-widest text-brand-light">سهولة التواصل</p>
-              <h3 className="text-2xl font-bold leading-tight text-white sm:text-3xl">
+              <h3 className="text-2xl font-bold leading-tight text-gray-900 sm:text-3xl">
                 تابع طلباتك وتواصل معنا من أي مكان
               </h3>
-              <p className="mt-2 max-w-prose text-sm text-neutral-400">
+              <p className="mt-2 max-w-prose text-sm text-gray-600">
                 استعرض خدماتنا، تابع حالة طلبك، وتواصل معنا مباشرة عبر الواتساب لأي استفسار أو طلب جديد
               </p>
             </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
             {/* Right mockup - iPad */}
             <div className="mx-auto w-full max-w-[1000px] lg:max-w-[1200px]">
               <div className="relative rounded-[24px] liquid-glass p-4 shadow-2xl">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-black">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-white">
                   <LazyVideo
                     src="/videos/2.MP4"
                     className="absolute inset-0 h-full w-full object-cover"
@@ -165,8 +165,8 @@ export default function AboutPage() {
                   <div className="relative p-8 md:p-12">
                     <div className="space-y-3">
                       <div className="text-7xl md:text-8xl lg:text-9xl font-extrabold text-brand-light">متابعة سهلة</div>
-                      <p className="text-base md:text-lg lg:text-xl text-white/80">من الطلب إلى التنفيذ بكل سلاسة</p>
-                      <div className="mt-6 inline-flex items-center rounded-full bg-black/40 px-4 py-2 text-sm uppercase tracking-wider text-brand-light">
+                      <p className="text-base md:text-lg lg:text-xl text-gray-600">من الطلب إلى التنفيذ بكل سلاسة</p>
+                      <div className="mt-6 inline-flex items-center rounded-full bg-brand-light/20 px-4 py-2 text-sm uppercase tracking-wider text-brand-light">
                         بدون تعقيد
                       </div>
                     </div>

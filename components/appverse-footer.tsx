@@ -14,7 +14,7 @@ interface FooterContent {
 }
 
 const defaultContent: FooterContent = {
-  tagline: "نقدم خدمات متكاملة للمستثمرين ورجال الأعمال في تأسيس الشركات والتسويق والسياحة والتعليم.",
+  tagline: "وفّر حلولاً متكاملة لدعم المستثمرين ورواد الأعمال، بدءًا من تأسيس الشركات وإدارة الإجراءات القانونية، مرورًا بـ خدمات التسويق وتطوير الأعمال، وصولًا إلى الخدمات السياحية والتعليمية والاستشارية.",
   copyright: "© 2025 — جميع الحقوق محفوظة",
 }
 
@@ -36,7 +36,7 @@ export function AppverseFooter() {
   }, [])
 
   return (
-    <section className="text-white">
+    <section className="text-gray-900">
 
 
 
@@ -106,23 +106,23 @@ export function AppverseFooter() {
 
 
       {/* Footer */}
-      <footer className="border-t border-white/10 pb-20 md:pb-10">
+      <footer className="border-t border-gray-200 pb-20 md:pb-10">
         <div className="container mx-auto px-4 py-10">
           <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
             {/* Brand */}
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
                 <Image src="/images/logo%20(3).png" alt="مقدام لخدمات الأعمال" width={44} height={44} className="h-11 w-11" />
-                <span className="text-xl font-semibold text-white">مقدام لخدمات الأعمال</span>
+                <span className="text-xl font-semibold text-gray-900">مقدام لخدمات الأعمال</span>
               </div>
-              <p className="max-w-sm text-sm text-neutral-400">{content.tagline}</p>
+              <p className="max-w-sm text-sm text-gray-600">{content.tagline}</p>
             </div>
 
             {/* Navigation */}
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-2">
               <div className="text-right">
-                <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">التنقل</h5>
-                <ul className="space-y-2 text-sm text-neutral-300">
+                <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-gray-500">التنقل</h5>
+                <ul className="space-y-2 text-sm text-gray-600">
                   {[
                     { label: "الرئيسية", href: "/" },
                     { label: "خدماتنا", href: "/services" },
@@ -139,10 +139,10 @@ export function AppverseFooter() {
                 </ul>
               </div>
               <div className="text-right">
-                <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">تواصل معنا</h5>
-                <ul className="space-y-2 text-sm text-neutral-300">
+                <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-gray-500">تواصل معنا</h5>
+                <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2 justify-end">
-                    <Twitter className="h-4 w-4 text-neutral-400" />
+                    <Twitter className="h-4 w-4 text-gray-500" />
                     <a
                       href="https://twitter.com/"
                       target="_blank"
@@ -154,7 +154,7 @@ export function AppverseFooter() {
                     </a>
                   </li>
                   <li className="flex items-center gap-2 justify-end">
-                    <Youtube className="h-4 w-4 text-neutral-400" />
+                    <Youtube className="h-4 w-4 text-gray-500" />
                     <a
                       href="https://www.youtube.com/"
                       target="_blank"
@@ -166,7 +166,7 @@ export function AppverseFooter() {
                     </a>
                   </li>
                   <li className="flex items-center gap-2 justify-end">
-                    <Instagram className="h-4 w-4 text-neutral-400" />
+                    <Instagram className="h-4 w-4 text-gray-500" />
                     <a
                       href="https://instagram.com/"
                       target="_blank"
@@ -178,9 +178,9 @@ export function AppverseFooter() {
                     </a>
                   </li>
                   <li className="flex items-center gap-2 justify-end">
-                    <MessageCircle className="h-4 w-4 text-neutral-400" />
+                    <MessageCircle className="h-4 w-4 text-gray-500" />
                     <a
-                      href="https://wa.link/rc25na"
+                      href="https://wa.me/96877292028"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-brand-light"
@@ -195,7 +195,7 @@ export function AppverseFooter() {
           </div>
 
           {/* Bottom bar */}
-          <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-neutral-500 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-6 text-xs text-gray-500 sm:flex-row">
             <p>{content.copyright}</p>
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="hover:text-brand-light">

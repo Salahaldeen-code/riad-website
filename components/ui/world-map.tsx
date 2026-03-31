@@ -22,7 +22,12 @@ interface LocationData {
 
 interface MapProps {
   dots?: Array<{
-    start: { lat: number; lng: number; label?: string; location?: LocationData | LocationData[] };
+    start: {
+      lat: number;
+      lng: number;
+      label?: string;
+      location?: LocationData | LocationData[];
+    };
     end: { lat: number; lng: number; label?: string; location?: LocationData };
   }>;
   lineColor?: string;
@@ -47,7 +52,7 @@ function ConnectionPaths({
 
   const createCurvedPath = (
     start: { x: number; y: number },
-    end: { x: number; y: number }
+    end: { x: number; y: number },
   ) => {
     const midX = (start.x + end.x) / 2;
     const midY = Math.min(start.y, end.y) - MAP_H * 0.12;
@@ -97,7 +102,7 @@ function MapMarkers({
   lineColor: string;
   onPointHover: (
     e: React.MouseEvent<SVGCircleElement>,
-    location: LocationData | LocationData[] | undefined
+    location: LocationData | LocationData[] | undefined,
   ) => void;
   onPointLeave: () => void;
 }) {
@@ -111,7 +116,7 @@ function MapMarkers({
           key: string,
           lat: number,
           lng: number,
-          location: LocationData | LocationData[] | undefined
+          location: LocationData | LocationData[] | undefined,
         ) => (
           <Marker key={key} coordinates={[lng, lat]}>
             <circle
@@ -134,7 +139,12 @@ function MapMarkers({
                 onMouseLeave={onPointLeave}
               />
             )}
-            <circle r="2" fill={lineColor} opacity="0.45" className="pointer-events-none">
+            <circle
+              r="2"
+              fill={lineColor}
+              opacity="0.45"
+              className="pointer-events-none"
+            >
               <animate
                 attributeName="r"
                 from="2"
@@ -161,14 +171,14 @@ function MapMarkers({
               `start-${i}`,
               dot.start.lat,
               dot.start.lng,
-              dot.start.location
+              dot.start.location,
             )}
             {!same
               ? renderMarker(
                   `end-${i}`,
                   dot.end.lat,
                   dot.end.lng,
-                  dot.end.location
+                  dot.end.location,
                 )
               : null}
           </g>
@@ -178,10 +188,7 @@ function MapMarkers({
   );
 }
 
-export function WorldMap({
-  dots = [],
-  lineColor = "#0ea5e9",
-}: MapProps) {
+export function WorldMap({ dots = [], lineColor = "#0ea5e9" }: MapProps) {
   const gradId = useId().replace(/:/g, "");
   const glowId = `${gradId}-glow`;
   const gradientId = `${gradId}-path-gradient`;
@@ -193,13 +200,13 @@ export function WorldMap({
   const handlePointHover = useCallback(
     (
       _e: React.MouseEvent<SVGCircleElement>,
-      location: LocationData | LocationData[] | undefined
+      location: LocationData | LocationData[] | undefined,
     ) => {
       if (!location) return;
       const locations = Array.isArray(location) ? location : [location];
       setHoveredPoint({ locations });
     },
-    []
+    [],
   );
 
   const handlePointLeave = useCallback(() => {
@@ -218,22 +225,22 @@ export function WorldMap({
         }}
         className="absolute inset-0 block h-full w-full select-none opacity-95 [mask-image:linear-gradient(to_bottom,transparent,white_12%,white_88%,transparent)]"
       >
-          <defs>
-            <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor={lineColor} stopOpacity="0" />
-              <stop offset="10%" stopColor={lineColor} stopOpacity="0.8" />
-              <stop offset="50%" stopColor={lineColor} stopOpacity="1" />
-              <stop offset="90%" stopColor={lineColor} stopOpacity="0.8" />
-              <stop offset="100%" stopColor={lineColor} stopOpacity="0" />
-            </linearGradient>
-            <filter id={glowId}>
-              <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-              <feMerge>
-                <feMergeNode in="coloredBlur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
+        <defs>
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor={lineColor} stopOpacity="0" />
+            <stop offset="10%" stopColor={lineColor} stopOpacity="0.8" />
+            <stop offset="50%" stopColor={lineColor} stopOpacity="1" />
+            <stop offset="90%" stopColor={lineColor} stopOpacity="0.8" />
+            <stop offset="100%" stopColor={lineColor} stopOpacity="0" />
+          </linearGradient>
+          <filter id={glowId}>
+            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
 
         <Geographies geography={countries110m}>
           {({
@@ -273,14 +280,14 @@ export function WorldMap({
           }
         </Geographies>
 
-          <ConnectionPaths dots={dots} gradientId={gradientId} glowId={glowId} />
-          <MapMarkers
-            dots={dots}
-            lineColor={lineColor}
-            onPointHover={handlePointHover}
-            onPointLeave={handlePointLeave}
-          />
-        </ComposableMap>
+        <ConnectionPaths dots={dots} gradientId={gradientId} glowId={glowId} />
+        <MapMarkers
+          dots={dots}
+          lineColor={lineColor}
+          onPointHover={handlePointHover}
+          onPointLeave={handlePointLeave}
+        />
+      </ComposableMap>
 
       <AnimatePresence>
         {hoveredPoint && (
@@ -295,7 +302,9 @@ export function WorldMap({
               {hoveredPoint.locations.map((location, idx) => (
                 <div
                   key={idx}
-                  className={idx > 0 ? "mt-5 pt-5 border-t border-gray-200" : ""}
+                  className={
+                    idx > 0 ? "mt-5 pt-5 border-t border-gray-200" : ""
+                  }
                 >
                   <div className="space-y-2.5 text-right">
                     <div className="font-bold text-xl text-gray-900 flex items-center gap-2">

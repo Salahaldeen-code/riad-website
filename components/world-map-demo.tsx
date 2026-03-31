@@ -28,9 +28,9 @@ export function WorldMapDemo() {
             dots={[
               {
                 start: {
-                  // Yemen - Aden
-                  lat: 12.8,
-                  lng: 45,
+                  // Yemen — Aden (approx. city center)
+                  lat: 12.7855,
+                  lng: 45.0187,
                   location: {
                     country: "اليمن",
                     city: "عدن",
@@ -38,15 +38,15 @@ export function WorldMapDemo() {
                   },
                 },
                 end: {
-                  lat: 12.8,
-                  lng: 45,
+                  lat: 12.7855,
+                  lng: 45.0187,
                 },
               },
               {
                 start: {
-                  // Oman - Muscat
-                  lat: 23.6,
-                  lng: 58.5,
+                  // Oman — Muscat
+                  lat: 23.588,
+                  lng: 58.3829,
                   location: {
                     country: "سلطنة عُمان",
                     city: "مسقط",
@@ -54,15 +54,15 @@ export function WorldMapDemo() {
                   },
                 },
                 end: {
-                  lat: 23.6,
-                  lng: 58.5,
+                  lat: 23.588,
+                  lng: 58.3829,
                 },
               },
               {
                 start: {
-                  // Saudi Arabia - Jeddah
-                  lat: 21.5,
-                  lng: 39.2,
+                  // Saudi Arabia — Jeddah (Red Sea coast)
+                  lat: 21.4858,
+                  lng: 39.1925,
                   location: {
                     country: "السعودية",
                     city: "جدة",
@@ -70,8 +70,8 @@ export function WorldMapDemo() {
                   },
                 },
                 end: {
-                  lat: 21.5,
-                  lng: 39.2,
+                  lat: 21.4858,
+                  lng: 39.1925,
                 },
               },
             ]}

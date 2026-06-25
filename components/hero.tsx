@@ -1,8 +1,13 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import LazyVideo from "./lazy-video"
 
 export function Hero() {
+  const [showAllServices, setShowAllServices] = useState(false)
+
   const buttonNew = (
     <Button asChild className="rounded-full bg-brand px-6 text-white hover:bg-brand-light">
       <a href="https://wa.me/96877292028" target="_blank" rel="noopener noreferrer">
@@ -29,7 +34,16 @@ export function Hero() {
           {/* Phone grid mimic */}
           <div className="mt-10 grid w-full gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
             {phoneData.map((p, i) => {
-              const visibility = i <= 2 ? "block" : i === 3 ? "hidden md:block" : i === 4 ? "hidden xl:block" : "hidden"
+              const visibility =
+                i <= 2
+                  ? "block"
+                  : showAllServices
+                    ? "block"
+                    : i === 3
+                      ? "hidden md:block"
+                      : i === 4
+                        ? "hidden xl:block"
+                        : "hidden"
 
               return (
                 <div key={i} className={visibility}>
@@ -38,6 +52,16 @@ export function Hero() {
               )
             })}
           </div>
+
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => setShowAllServices((prev) => !prev)}
+            className="mt-4 rounded-full border-brand/30 text-brand hover:bg-brand/5 md:hidden"
+          >
+            {showAllServices ? "عرض أقل" : "عرض المزيد"}
+          </Button>
         </div>
       </div>
     </section>
@@ -94,6 +118,13 @@ const phoneData = [
     videoSrc: "/videos/تأسيس%20الشركات.MP4",
   },
   {
+    title: "الاستشارات التجارية",
+    sub: "استشارات تجارية وصناعية وتسويقية وإدارية لدعم قراراتك الاستثمارية وتطوير أعمالك",
+    tone: "تجارية",
+    gradient: "from-[#0b0b0b] via-[#1f2937] to-[#0b1220]",
+    videoSrc: "/videos/Consultations.mp4",
+  },
+  {
     title: "التسويق الرقمي",
     sub: "تصميم الشعارات والمواقع والإعلانات",
     tone: "تسويق",
@@ -106,13 +137,6 @@ const phoneData = [
     tone: "سياحة",
     gradient: "from-[#001028] via-[#0b355e] to-[#052e5e]",
     videoSrc: "/videos/السياحة%20والسفر.MP4",
-  },
-  {
-    title: "الاستشارات التجارية",
-    sub: "استشارات تجارية وصناعية وتسويقية وإدارية لدعم قراراتك الاستثمارية وتطوير أعمالك",
-    tone: "تجارية",
-    gradient: "from-[#0b0b0b] via-[#1f2937] to-[#0b1220]",
-    videoSrc: "/videos/Consultations.mp4",
   },
   {
     title: "الخدمات المحاسبية",
